@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>brrrp 개인정보처리방침</title>
+<meta name="description" content="brrrp 앱 개인정보처리방침 — 얼굴/카메라 데이터 온디바이스 처리, 저장·전송 없음.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --line: #e5e5ea;
+    --accent: #ff7a1a;
+    --card: #fff5ec;
+    --card-line: #ffd9b8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f11;
+      --fg: #ececef;
+      --muted: #9a9aa2;
+      --line: #2a2a2e;
+      --accent: #ff9445;
+      --card: #241a12;
+      --card-line: #4a3320;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Segoe UI", Roboto, sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 20px 72px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 { font-size: 1.8rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .date { color: var(--muted); font-size: 0.92rem; }
+  .intro { color: var(--muted); margin-top: 14px; }
+  h2 { font-size: 1.15rem; margin: 34px 0 10px; letter-spacing: -0.01em; }
+  p { margin: 0 0 12px; }
+  ul { margin: 0 0 12px; padding-left: 1.2em; }
+  li { margin: 6px 0; }
+  li::marker { color: var(--accent); }
+  .foot-note { color: var(--muted); font-size: 0.95rem; margin-top: 6px; }
+  a { color: var(--accent); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-line);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin: 8px 0 8px;
+  }
+  .card h2 { margin-top: 0; }
+  .card ul { list-style: none; padding-left: 0; }
+  .card li { display: flex; gap: 10px; align-items: flex-start; }
+  .card .ic { flex: 0 0 auto; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 12px; font-size: 0.96rem; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  .tablewrap { overflow-x: auto; }
+  footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>brrrp 개인정보처리방침</h1>
+    <div class="date">시행일: 2026년 7월 22일</div>
+    <p class="intro">brrrp(이하 “앱”)는 이용자의 개인정보와 프라이버시를 최우선으로 보호합니다. 본 앱은 알람을 끄기 위해 카메라로 이용자의 표정을 인식하지만, <strong>얼굴과 관련한 어떠한 데이터도 저장하거나 외부로 전송하지 않으며, 서버를 운영하지 않습니다.</strong></p>
+  </header>
+
+  <section class="card">
+    <h2>한눈에 보기</h2>
+    <ul>
+      <li><span class="ic">📷</span><span>카메라 영상과 표정 데이터는 <strong>오직 기기 안에서 실시간으로만</strong> 처리됩니다.</span></li>
+      <li><span class="ic">🚫</span><span>얼굴 이미지·영상·표정 데이터를 <strong>저장하지 않습니다.</strong></span></li>
+      <li><span class="ic">🚫</span><span>어떤 데이터도 <strong>서버·제3자에게 전송하거나 제공하지 않습니다.</strong></span></li>
+      <li><span class="ic">🔒</span><span>앱은 <strong>네트워크 통신을 하지 않으며</strong>, 외부 분석·광고 SDK를 포함하지 않습니다.</span></li>
+      <li><span class="ic">🗑️</span><span>설정 정보는 <strong>기기 내부에만</strong> 저장되며, 앱을 삭제하면 함께 삭제됩니다.</span></li>
+    </ul>
+  </section>
+
+  <h2>2. 카메라 및 표정(얼굴) 데이터</h2>
+  <ul>
+    <li>앱은 알람 해제 미션(표정 따라 하기) 화면에서만 전면 카메라를 사용합니다.</li>
+    <li>표정 인식은 Apple ARKit의 얼굴 추적(blendShapes 계수)만을 사용합니다. 이는 “입꼬리 올림 0.8”처럼 표정의 강도를 나타내는 수치값이며, 실시간으로 판정에 쓰인 뒤 즉시 사라집니다.</li>
+    <li>카메라 영상 프레임과 얼굴 이미지는 <strong>화면 밖으로 나가지 않고, 파일로 저장되지 않으며, 캡처·녹화되지 않습니다.</strong></li>
+    <li>표정 데이터는 미션 판정에만 사용되고 기기 메모리에서만 처리되며, 미션이 끝나면 카메라 세션이 종료됩니다.</li>
+    <li>이 처리는 Face ID 등 기기의 생체 인증과 전혀 무관하며, 앱은 생체 인식 템플릿을 만들거나 사용하지 않습니다.</li>
+  </ul>
+
+  <h2>3. 앱이 기기에 저장하는 정보</h2>
+  <ul>
+    <li>알람 설정(시간, 반복 요일, 알람음, 스누즈 설정 등)</li>
+    <li>앱 환경설정(예: 수동 해제 허용 여부)</li>
+  </ul>
+  <p class="foot-note">이 정보들은 회원가입·계정 없이 <strong>오직 이용자의 기기 안에만</strong> 저장되며, 앱을 삭제하면 모두 삭제됩니다.</p>
+
+  <h2>4. 수집하지 않는 정보</h2>
+  <ul>
+    <li>이름, 이메일, 전화번호 등 개인 식별 정보</li>
+    <li>위치 정보</li>
+    <li>얼굴 이미지·영상, 생체 인식 템플릿</li>
+    <li>광고 식별자, 사용 통계·분석 데이터</li>
+  </ul>
+
+  <h2>5. 제3자 제공 및 처리 위탁</h2>
+  <p>앱은 개인정보를 제3자에게 제공하거나 그 처리를 위탁하지 않습니다. 앱에는 외부 분석·광고·크래시 리포팅 SDK가 포함되어 있지 않습니다.</p>
+
+  <h2>6. 접근 권한</h2>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>권한</th><th>사용 목적</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>카메라</td><td>알람 해제를 위한 표정 인식</td><td>미션 수행에 사용</td></tr>
+        <tr><td>알림·알람(AlarmKit)</td><td>지정한 시간에 알람 발생</td><td>앱 핵심 기능에 사용</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot-note">권한은 iOS 설정 &gt; brrrp에서 언제든지 변경할 수 있습니다. 카메라를 거부하면 표정 미션 대신, 설정에서 켜 둔 경우 수동 해제로 알람을 끌 수 있습니다.</p>
+
+  <h2>7. 아동의 개인정보</h2>
+  <p>앱은 특별히 아동을 대상으로 하지 않으며, 아동으로부터 개인정보를 수집하지 않습니다. 앱은 어떤 이용자로부터도 개인정보를 수집하지 않습니다.</p>
+
+  <h2>8. 보관 및 파기</h2>
+  <p>앱은 개인정보를 서버에 보관하지 않습니다. 기기 내 저장 정보(알람·설정)는 이용자가 앱에서 삭제하거나 앱을 삭제하면 즉시 파기됩니다.</p>
+
+  <h2>9. 이용자의 권리</h2>
+  <p>모든 데이터가 이용자의 기기 안에만 존재하므로, 이용자는 앱 내 삭제 또는 앱 제거를 통해 자신의 정보를 직접 완전히 통제하고 삭제할 수 있습니다.</p>
+
+  <h2>10. 방침 변경</h2>
+  <p>본 방침이 변경되면 앱 업데이트 및 본 페이지를 통해 고지하며, 변경 시 시행일을 갱신합니다.</p>
+
+  <h2>11. 문의</h2>
+  <p>개인정보 관련 문의: <a href="mailto:ricecookey_help@gmail.com">ricecookey_help@gmail.com</a></p>
+
+  <footer>
+    시행일: 2026년 7월 22일 · brrrp
+  </footer>
+</div>
+</body>
+</html>
