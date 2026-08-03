@@ -88,7 +88,7 @@
   <h2>2. Camera &amp; Facial (Expression) Data</h2>
   <ul>
     <li>The App uses the front camera only on the alarm-dismissal challenge screen (copying an expression).</li>
-    <li>Expression recognition uses only Apple ARKit face tracking (blendShape coefficients) — numeric values indicating expression intensity, such as “mouth-corner raise 0.8.” They are used for real-time judging and then immediately discarded.</li>
+    <li>Expression recognition uses only Apple ARKit face tracking (<code>ARFaceTrackingConfiguration</code>, which runs on the TrueDepth camera), reading blendShape coefficients — numeric values indicating expression intensity, such as “mouth-corner raise 0.8.” They are used for real-time judging and then immediately discarded.</li>
     <li>Camera video frames and face images <strong>never leave the screen, are not saved to any file, are not captured or recorded, and are never transmitted.</strong></li>
     <li>Expression data is used only for challenge judging, processed only in device memory, and the camera session ends when the challenge finishes.</li>
     <li>This has nothing to do with Face ID or other device biometrics; the App does not create or use any biometric template.</li>
