@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brrrp Privacy Policy</title>
-<meta name="description" content="Brrrp app privacy policy — face/camera data processed on-device, never stored or transmitted. Only anonymous statistics collected.">
+<meta name="description" content="Brrrp app privacy policy — face and hand/camera data processed on-device, never stored or transmitted. Only anonymous statistics collected.">
 <style>
   :root {
     --bg: #ffffff;
@@ -70,28 +70,29 @@
 <div class="wrap">
   <header>
     <h1>Brrrp Privacy Policy</h1>
-    <div class="date">Effective: July 30, 2026</div>
-    <p class="intro">Brrrp (the “App”) puts your privacy first. The App uses the camera to recognize your facial expression so you can turn off alarms, but <strong>never stores or transmits any face-related data.</strong> It uses the network to download expression-challenge content and to send anonymous statistics that help improve the service, but <strong>none of that includes your face or any personally identifying information.</strong></p>
+    <div class="date">Effective: August 22, 2026</div>
+    <p class="intro">Brrrp (the “App”) puts your privacy first. The App uses the camera to recognize your facial expressions and hand gestures so you can turn off alarms, but <strong>never stores or transmits any face- or hand-related data.</strong> It uses the network to download expression/gesture-challenge content and to send anonymous statistics that help improve the service, but <strong>none of that includes your face, hands, or any personally identifying information.</strong></p>
   </header>
 
   <section class="card">
     <h2>At a glance</h2>
     <ul>
-      <li><span class="ic">📷</span><span>Camera video and expression data are processed <strong>only on your device, in real time.</strong></span></li>
-      <li><span class="ic">🚫</span><span>Face images, video, and expression data are <strong>never stored and never transmitted anywhere.</strong></span></li>
-      <li><span class="ic">🌐</span><span>The App uses the network to <strong>fetch challenge content and send anonymous statistics</strong> — never your face or personal information.</span></li>
+      <li><span class="ic">📷</span><span>Camera video and expression/hand data are processed <strong>only on your device, in real time.</strong></span></li>
+      <li><span class="ic">🚫</span><span>Face and hand images, video, and expression/gesture data are <strong>never stored and never transmitted anywhere.</strong></span></li>
+      <li><span class="ic">🌐</span><span>The App uses the network to <strong>fetch challenge content and send anonymous statistics</strong> — never your face, hands, or personal information.</span></li>
       <li><span class="ic">📊</span><span>Only <strong>anonymous, non-identifying statistics</strong> are collected (no name or account).</span></li>
-      <li><span class="ic">📣</span><span>To keep the App free, it shows <strong>non-personalized banner ads</strong> (Google AdMob) and <strong>does not track you.</strong> Face data is never used for ads.</span></li>
+      <li><span class="ic">📣</span><span>To keep the App free, it shows <strong>non-personalized banner and rewarded ads</strong> (Google AdMob) and <strong>does not track you.</strong> Face and hand data are never used for ads.</span></li>
       <li><span class="ic">🗑️</span><span>Alarm and settings data are stored <strong>only on your device</strong> and are deleted when you remove the App.</span></li>
     </ul>
   </section>
 
-  <h2>2. Camera &amp; Facial (Expression) Data</h2>
+  <h2>2. Camera, Facial (Expression) &amp; Hand Data</h2>
   <ul>
-    <li>The App uses the front camera only on the alarm-dismissal challenge screen (copying an expression).</li>
+    <li>The App uses the front camera only on the alarm-dismissal challenge screen (copying an expression or hand pose).</li>
     <li>Expression recognition uses only Apple ARKit face tracking (<code>ARFaceTrackingConfiguration</code>, which runs on the TrueDepth camera), reading blendShape coefficients — numeric values indicating expression intensity, such as “mouth-corner raise 0.8.” They are used for real-time judging and then immediately discarded.</li>
-    <li>Camera video frames and face images <strong>never leave the screen, are not saved to any file, are not captured or recorded, and are never transmitted.</strong></li>
-    <li>Expression data is used only for challenge judging, processed only in device memory, and the camera session ends when the challenge finishes.</li>
+    <li>Hand-gesture recognition uses the Apple Vision framework to estimate the positions (coordinates) of hand joints from the camera image in real time for gesture judging. These coordinates are likewise discarded right after judging and are never saved as a hand image.</li>
+    <li>Camera video frames and face/hand images <strong>never leave the screen, are not saved to any file, are not captured or recorded, and are never transmitted.</strong></li>
+    <li>Expression and hand data are used only for challenge judging, processed only in device memory, and the camera session ends when the challenge finishes.</li>
     <li>This has nothing to do with Face ID or other device biometrics; the App does not create or use any biometric template.</li>
   </ul>
 
@@ -105,37 +106,37 @@
   <h2>4. Anonymous Statistics for Service Improvement</h2>
   <p>To improve challenge difficulty and usability, the App collects <strong>anonymous, non-identifying statistics.</strong></p>
   <ul>
-    <li><strong>Collected:</strong> a randomly generated anonymous install identifier, platform (iOS), the challenge/expression attempted, success or exit, the recognition score reached, and time taken.</li>
-    <li><strong>Not collected:</strong> personally identifying information such as name, email, phone number, or location; face images, video, or raw expression data; advertising identifiers (IDFA).</li>
+    <li><strong>Collected:</strong> a randomly generated anonymous install identifier, platform (iOS), the challenge/expression/hand gesture attempted, success or exit, the recognition score reached, and time taken.</li>
+    <li><strong>Not collected:</strong> personally identifying information such as name, email, phone number, or location; face or hand images, video, or raw expression/gesture data; advertising identifiers (IDFA).</li>
   </ul>
-  <p class="foot-note">These statistics do not identify any individual and are never combined with face data. The statistics are stored and processed by a third-party cloud service (Supabase Inc.).</p>
+  <p class="foot-note">These statistics do not identify any individual and are never combined with face or hand data. The statistics are stored and processed by a third-party cloud service (Supabase Inc.).</p>
 
   <h2>5. Network, Advertising &amp; Content Delivery</h2>
-  <p>The App downloads expression-challenge (pack and expression) content from a third-party cloud service (Supabase Inc.) to keep it up to date. This communication <strong>does not include any face or personally identifying information.</strong></p>
-  <p>To offer the App for free, it also shows <strong>non-personalized banner ads via Google AdMob</strong>. Because these ads are non-personalized, the App does not track you (no App Tracking Transparency prompt) and does not profile you for ad personalization. Google may process <strong>limited information</strong> — such as device type, coarse (country-level) region, and ad interactions — to deliver ads and prevent fraud, but <strong>face/expression data is never used for advertising.</strong></p>
+  <p>The App downloads expression/gesture-challenge (pack, expression, and gesture) content from a third-party cloud service (Supabase Inc.) to keep it up to date. This communication <strong>does not include any face, hand, or personally identifying information.</strong></p>
+  <p>To offer the App for free, it also shows <strong>non-personalized banner and rewarded ads via Google AdMob</strong>. Rewarded ads are watched optionally, only when you choose to (for example, to unlock a locked challenge pack). Because these ads are non-personalized, the App does not track you (no App Tracking Transparency prompt) and does not profile you for ad personalization. Google may process <strong>limited information</strong> — such as device type, coarse (country-level) region, and ad interactions — to deliver ads and prevent fraud, but <strong>face, hand, and expression data are never used for advertising.</strong></p>
 
   <h2>6. Information We Do Not Collect</h2>
   <ul>
     <li>Personally identifying information such as name, email, or phone number</li>
     <li>Location data</li>
-    <li>Face images or video, biometric templates</li>
+    <li>Face or hand images or video, biometric templates</li>
     <li>Advertising identifiers (IDFA), cross-app tracking data</li>
   </ul>
 
   <h2>7. Third Parties &amp; Processing</h2>
-  <p>The App does not sell personal information. It uses a cloud infrastructure service (Supabase Inc.) for <strong>content delivery and anonymous statistics</strong>, and Google AdMob for <strong>non-personalized banner ads</strong>. In neither case is any <strong>face data or personally identifying information shared.</strong></p>
+  <p>The App does not sell personal information. It uses a cloud infrastructure service (Supabase Inc.) for <strong>content delivery and anonymous statistics</strong>, and Google AdMob for <strong>non-personalized banner and rewarded ads</strong>. In neither case is any <strong>face or hand data or personally identifying information shared.</strong></p>
 
   <h2>8. Permissions</h2>
   <div class="tablewrap">
     <table>
       <thead><tr><th>Permission</th><th>Purpose</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td>Camera</td><td>Expression recognition to dismiss the alarm</td><td>Used for challenges</td></tr>
+        <tr><td>Camera</td><td>Expression and hand-gesture recognition to dismiss the alarm</td><td>Used for challenges</td></tr>
         <tr><td>Notifications / Alarms (AlarmKit)</td><td>Firing alarms at the set time</td><td>Core app function</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="foot-note">You can change permissions anytime in iOS Settings &gt; Brrrp. If you deny the camera, you can dismiss alarms via manual dismissal instead of the expression challenge, when enabled in settings.</p>
+  <p class="foot-note">You can change permissions anytime in iOS Settings &gt; Brrrp. If you deny the camera, you can dismiss alarms via manual dismissal instead of the expression/hand challenge, when enabled in settings.</p>
 
   <h2>9. Children’s Privacy</h2>
   <p>The App is not directed at children and does not collect personally identifying information from children.</p>
@@ -144,7 +145,7 @@
   <p>Information stored on your device (alarms and settings) is deleted immediately when you remove it in the App or delete the App. Anonymous statistics are retained, in a form that cannot identify any individual, solely to improve the service.</p>
 
   <h2>11. Your Rights</h2>
-  <p>Because your face data and app settings exist only on your device, you have full control and can delete them entirely by removing them in the App or deleting the App. Anonymous statistics are not tied to any individual and therefore cannot be individually identified or deleted. For related inquiries, contact us at the email below.</p>
+  <p>Because your face and hand data and app settings exist only on your device, you have full control and can delete them entirely by removing them in the App or deleting the App. Anonymous statistics are not tied to any individual and therefore cannot be individually identified or deleted. For related inquiries, contact us at the email below.</p>
 
   <h2>12. Changes to This Policy</h2>
   <p>If this policy changes, we will notify you through an app update and this page, and update the effective date accordingly.</p>
@@ -153,7 +154,7 @@
   <p>Privacy inquiries: <a href="mailto:ricecookey.help@gmail.com">ricecookey.help@gmail.com</a></p>
 
   <footer>
-    Effective: July 30, 2026 · Brrrp
+    Effective: August 22, 2026 · Brrrp
   </footer>
 </div>
 </body>
