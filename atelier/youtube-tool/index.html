@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아뜰리에 채널 도구 — YouTube API 이용 안내</title>
+<meta name="description" content="별을 입는 아뜰리에가 자사 유튜브 채널을 관리하기 위해 쓰는 내부 도구와 YouTube API Services 이용 안내.">
+<style>
+  :root { --bg:#ffffff; --fg:#1c1c1e; --muted:#6b6b70; --line:#e5e5ea; --accent:#6a5acd; --card:#f3f1fd; --card-line:#d9d3f7; }
+  @media (prefers-color-scheme: dark){ :root{ --bg:#0f0f13; --fg:#ececef; --muted:#9a9aa2; --line:#2a2a30; --accent:#a99bf0; --card:#1a1726; --card-line:#332c4d; } }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--fg); line-height:1.7; font-size:16px;
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:720px; margin:0 auto; padding:40px 20px 72px; }
+  header { border-bottom:1px solid var(--line); padding-bottom:20px; margin-bottom:28px; }
+  h1 { font-size:1.8rem; margin:0 0 6px; letter-spacing:-0.02em; }
+  .date { color:var(--muted); font-size:0.92rem; }
+  .intro { color:var(--muted); margin-top:14px; }
+  h2 { font-size:1.15rem; margin:34px 0 10px; letter-spacing:-0.01em; }
+  p { margin:0 0 12px; }
+  ul { margin:0 0 12px; padding-left:1.2em; }
+  li { margin:6px 0; }
+  li::marker { color:var(--accent); }
+  a { color:var(--accent); }
+  .card { background:var(--card); border:1px solid var(--card-line); border-radius:16px; padding:20px 22px; margin:8px 0; }
+  .card h2 { margin-top:0; }
+  table { width:100%; border-collapse:collapse; margin:6px 0 12px; font-size:0.96rem; }
+  th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  .tablewrap { overflow-x:auto; }
+  footer { margin-top:44px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:0.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Atelier of Starlight Channel Tool</h1>
+  <div class="date">별을 입는 아뜰리에 · 자사 유튜브 채널 관리용 내부 도구</div>
+  <p class="intro">저희가 소유한 유튜브 채널에 홍보 영상과 채널 배너를 올리기 위해 쓰는 명령줄 도구입니다.
+  외부에 배포하거나 판매하지 않습니다.</p>
+</header>
+
+<div class="card">
+  <h2>개인정보처리방침</h2>
+  <p>이 도구와 앱이 정보를 어떻게 다루는지는 아래에 있습니다.</p>
+  <p>
+    <strong>👉 <a href="../">개인정보처리방침 (한국어)</a></strong> ·
+    <a href="../en/">Privacy Policy (English)</a>
+  </p>
+  <p style="margin-bottom:0">유튜브 관련 내용은 방침의 <strong>8. 유튜브 채널 관리 도구</strong> 항목에 있습니다.</p>
+</div>
+
+<h2>무엇을 하는 도구인가</h2>
+<ul>
+  <li>저희 채널 <a href="https://www.youtube.com/@atelierofstarlight">@atelierofstarlight</a> 에
+      홍보 영상과 썸네일, 채널 배너를 올립니다.</li>
+  <li>제목 같은 정보를 고칩니다.</li>
+  <li><strong>다른 이용자의 유튜브 데이터는 읽지도 저장하지도 않습니다.</strong>
+      시청 기록·구독 정보·댓글·통계를 가져오지 않습니다.</li>
+</ul>
+
+<h2>누가 쓰나</h2>
+<p>개발자 본인 한 명뿐입니다. 가입도 배포도 없고, 공개된 주소나 설치 파일이 없습니다.
+저희 계정의 인증 토큰 하나를 개발자 기기 안에만 둡니다.</p>
+
+<h2>YouTube API Services</h2>
+<p>이 도구는 <strong>YouTube API Services</strong> 를 이용합니다.
+이용함으로써 <a href="https://www.youtube.com/t/terms">YouTube 서비스 약관</a>에 동의하며,
+<a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>이 함께 적용됩니다.</p>
+<p>저희가 채널에 접근하는 권한은
+<a href="https://myaccount.google.com/permissions">Google 보안 설정</a>에서 언제든 취소할 수 있습니다.</p>
+
+<h2>문의</h2>
+<p>📧 <a href="mailto:ricecookey.help@gmail.com">ricecookey.help@gmail.com</a></p>
+
+<footer>별을 입는 아뜰리에 · <a href="../">개인정보처리방침</a> · <a href="../../">정책 페이지</a></footer>
+</div>
+</body>
+</html>
