@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>뽑뽑 받기</title>
+<meta name="robots" content="noindex">
+<style>
+:root { color-scheme: dark; }
+body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  background: #26222c; color: #f5f1ec; font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+main { width: 100%; max-width: 360px; padding: 32px 16px; box-sizing: border-box; text-align: center; }
+h1 { margin: 0 0 8px; font-size: 32px; }
+p { margin: 0 0 24px; color: #c8c0cf; font-size: 15px; }
+a { display: block; margin: 10px 0; padding: 16px; border-radius: 999px; background: #4a4454;
+  color: #f5f1ec; font-weight: 700; font-size: 17px; text-decoration: none; }
+</style>
+</head>
+<body>
+<main>
+<h1>뽑뽑</h1>
+<p>같은 색? 한 장 더!</p>
+<a id="ios" href="https://apps.apple.com/app/id6818056198">App Store에서 받기</a>
+<a id="android" href="https://play.google.com/store/apps/details?id=com.ricecookey.poppop">Google Play에서 받기</a>
+</main>
+<script>
+// 공유 링크 하나로 기기에 맞는 스토어로 보낸다. ?s=유입경로(기본 share_card)를 스토어 집계로 넘김
+// iOS: App Store 캠페인 ct, Android: Play Install Referrer(utm_source)
+(function () {
+  var q = new URLSearchParams(location.search);
+  var src = (q.get('s') || 'share_card').replace(/[^a-z0-9_]/gi, '').slice(0, 40) || 'share_card';
+  var ios = 'https://apps.apple.com/app/id6818056198?ct=' + src + '&mt=8';
+  var android = 'https://play.google.com/store/apps/details?id=com.ricecookey.poppop&referrer=' +
+    encodeURIComponent('utm_source=' + src + '&utm_medium=share');
+  document.getElementById('ios').href = ios;
+  document.getElementById('android').href = android;
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  if (isIOS) location.replace(ios);
+  else if (/Android/.test(ua)) location.replace(android);
+})();
+</script>
+</body>
+</html>
