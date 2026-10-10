@@ -51,6 +51,7 @@
     <ul>
       <li><span>🙅</span><span><strong>회원가입·로그인이 없습니다.</strong> 이름, 전화번호, 이메일 등을 받지 않습니다.</span></li>
       <li><span>📱</span><span>점수, 코인, 강화, 스킨, 아이템, 출석·미션, 공방, 설정은 <strong>이용자의 휴대폰 안에만</strong> 저장됩니다.</span></li>
+      <li><span>🏆</span><span><strong>랭킹은 선택</strong>입니다. 닉네임을 정한 경우에만 닉네임과 최고 점수가 랭킹에 공개되며, 언제든 지울 수 있습니다.</span></li>
       <li><span>📊</span><span>게임을 더 좋게 만들기 위해 <strong>익명 사용 통계(Google Analytics for Firebase)</strong>를 받습니다. 이름이나 연락처는 포함되지 않습니다.</span></li>
       <li><span>📣</span><span>이어하기·코인 2배 등을 고를 때 <strong>보상형 광고</strong>, 판과 판 사이에 가끔 <strong>전면 광고(Google AdMob)</strong>가 나옵니다.</span></li>
       <li><span>💳</span><span>광고 제거·스킨 등 <strong>인앱 결제는 App Store / Google Play가 처리</strong>하며, 운영자는 카드 정보를 받지 않습니다.</span></li>
@@ -64,6 +65,7 @@
     <tbody>
       <tr><td>게임 기록</td><td>최고 기록, 코인, 강화 단계, 보유·선택 스킨, 아이템 개수, 출석·미션 진행, 공방 부품, 판 수, 설정(소리·진동·흔들림 줄이기), 광고 동의 여부</td><td>게임 진행 저장</td><td>이용자 기기 (운영자에게 전송하지 않음)</td></tr>
       <tr><td>사용 통계 (Google Analytics for Firebase)</td><td>앱 인스턴스 ID, 게임 이벤트(판 시작·종료와 점수·웨이브, 아이템 사용, 광고 시청, 스킨 획득, 구매한 상품 종류), 기기 모델·운영체제·앱 버전, 국가(대략적 위치)</td><td>난이도·경제 조정, 오류 파악, 서비스 개선</td><td>Google 서버 (아래 3번)</td></tr>
+      <tr><td>랭킹 (선택, Cloud Firestore · Firebase 익명 인증)</td><td>이용자가 정한 닉네임, 최고 점수, 이번 주 최고 점수, 익명 사용자 ID, 플랫폼(iOS/Android), 갱신 시각. 신고 시 신고 대상 ID·닉네임과 신고한 익명 ID</td><td>랭킹 표시, 부적절한 닉네임 신고 처리</td><td>Google 서버 (닉네임·점수는 다른 이용자에게 공개)</td></tr>
       <tr><td>원격 설정 (Firebase Remote Config)</td><td>앱 인스턴스 ID, 앱 버전</td><td>광고 간격 등 게임 수치를 업데이트 없이 조정</td><td>Google 서버</td></tr>
       <tr><td>광고 (Google AdMob이 수집)</td><td>광고 식별자(Android 광고 ID, iOS IDFA — 이용자가 허용한 경우), 기기·운영체제·앱 정보, IP 주소, 광고 조회·클릭 기록</td><td>보상형·전면 광고 표시, 광고 성과 측정, 부정 사용 방지</td><td>Google 서버</td></tr>
       <tr><td>결제 (Apple / Google이 처리)</td><td>구매한 상품, 거래 확인 정보 (카드·계좌 정보는 운영자가 받지 않음)</td><td>구매한 상품 지급, 구매 복원</td><td>Apple / Google, 지급 결과는 이용자 기기</td></tr>
@@ -75,6 +77,7 @@
   <ul>
     <li>기기에 저장된 게임 기록은 <strong>앱을 삭제할 때</strong> 삭제됩니다.</li>
     <li>사용 통계는 Google Analytics의 데이터 보관 설정에 따라 보관 후 삭제됩니다.</li>
+    <li>랭킹 기록은 앱의 랭킹 화면에서 <strong>[내 기록 지우기]</strong>를 누르면 즉시 삭제됩니다. 부적절한 닉네임은 신고 확인 후 운영자가 가릴 수 있습니다.</li>
     <li>운영자는 이용자의 개인정보를 별도로 보관하지 않습니다.</li>
   </ul>
 
@@ -83,7 +86,7 @@
   <div class="tablewrap"><table>
     <thead><tr><th>이전받는 자 (국가)</th><th>목적</th><th>이전 항목</th><th>이전 시기·방법</th><th>보유 기간</th></tr></thead>
     <tbody>
-      <tr><td>Google LLC (미국)<br>연락처: <a href="https://support.google.com/policies">support.google.com/policies</a></td><td>사용 통계(Firebase Analytics), 원격 설정(Remote Config), 광고 게재·성과 측정(AdMob), 광고 동의 관리, Google Play 결제</td><td>1번의 사용 통계·원격 설정·광고·결제 항목</td><td>앱을 사용하는 동안 네트워크로 전송</td><td>Google 개인정보처리방침에 따름</td></tr>
+      <tr><td>Google LLC (미국)<br>연락처: <a href="https://support.google.com/policies">support.google.com/policies</a></td><td>사용 통계(Firebase Analytics), 랭킹(Cloud Firestore·익명 인증), 원격 설정(Remote Config), 광고 게재·성과 측정(AdMob), 광고 동의 관리, Google Play 결제</td><td>1번의 사용 통계·랭킹·원격 설정·광고·결제 항목</td><td>앱을 사용하는 동안 네트워크로 전송</td><td>Google 개인정보처리방침에 따름</td></tr>
       <tr><td>Apple Inc. (미국)</td><td>App Store 결제</td><td>1번의 결제 항목</td><td>이용자가 구매할 때</td><td>Apple 개인정보처리방침에 따름</td></tr>
     </tbody>
   </table></div>
@@ -115,16 +118,22 @@
     <li>사용 통계·광고와 관련한 열람·삭제 요청은 Google에, 결제 관련 요청은 각 스토어에 할 수 있으며, 그 밖의 문의는 아래 이메일로 보내 주시면 지체 없이 답변합니다.</li>
   </ul>
 
-  <h2>7. 아동의 개인정보</h2>
+  <h2>7. 랭킹과 닉네임</h2>
+  <ul>
+    <li>닉네임은 2~12자이며, 욕설·사칭 단어는 쓸 수 없습니다. 다른 이용자의 닉네임은 길게 누르거나 [⋯]을 눌러 신고하거나 가릴 수 있습니다.</li>
+    <li>신고된 닉네임은 운영자가 확인 후 랭킹에서 가립니다. 닉네임에 개인정보(실명, 연락처 등)를 쓰지 마세요.</li>
+  </ul>
+
+  <h2>8. 아동의 개인정보</h2>
   <p>앱은 만 14세 미만 아동을 주 대상으로 하지 않으며, 아동의 개인정보를 알면서 수집하지 않습니다.</p>
 
-  <h2>8. 안전성 확보 조치</h2>
+  <h2>9. 안전성 확보 조치</h2>
   <ul>
     <li>기기에 저장되는 정보는 운영체제가 앱 전용으로 구분한 저장공간에 보관되어 다른 앱이 읽을 수 없습니다.</li>
     <li>통계·광고·결제 통신은 암호화된 연결(HTTPS)로 이루어집니다.</li>
   </ul>
 
-  <h2>9. 개인정보 보호책임자</h2>
+  <h2>10. 개인정보 보호책임자</h2>
   <p>개인정보 처리에 관한 문의, 불만, 피해 구제는 아래로 연락해 주세요.</p>
   <ul>
     <li>개인정보 보호책임자: 정혜원</li>
@@ -132,7 +141,7 @@
   </ul>
   <p>개인정보 침해 신고·상담은 개인정보침해신고센터(privacy.kisa.or.kr, 국번 없이 118), 개인정보분쟁조정위원회(kopico.go.kr, 1833-6972), 대검찰청(spo.go.kr, 1301), 경찰청(ecrm.police.go.kr, 182)에 할 수 있습니다.</p>
 
-  <h2>10. 방침 변경</h2>
+  <h2>11. 방침 변경</h2>
   <p>이 방침이 바뀌면 시행 7일 전(이용자에게 불리한 변경은 30일 전)부터 앱과 이 페이지로 알립니다.</p>
 
   <footer>시행일: 2026년 10월 10일 · 착착: 자석블록퍼즐 · 운영: 라이스쿠키 · <a href="../">정책 페이지</a></footer>
