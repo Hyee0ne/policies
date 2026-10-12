@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Atelier of Starlight — Privacy Policy</title>
-<meta name="description" content="No account. Personalised ads are used with your consent. Drawings are sent only to create clothing and deleted after 90 days.">
+<meta name="description" content="No account. Personalised ads are used with your consent. Drawings are sent only to create clothing and deleted after 90 days. Firebase Analytics usage statistics and Crashlytics crash reports.">
 <style>
   :root { --bg:#ffffff; --fg:#1c1c1e; --muted:#6b6b70; --line:#e5e5ea; --accent:#6a5acd; --card:#f3f1fd; --card-line:#d9d3f7; }
   @media (prefers-color-scheme: dark){ :root{ --bg:#0f0f13; --fg:#ececef; --muted:#9a9aa2; --line:#2a2a30; --accent:#a99bf0; --card:#1a1726; --card-line:#332c4d; } }
@@ -36,7 +36,7 @@
 <div class="wrap">
 <header>
   <h1>Atelier of Starlight — Privacy Policy</h1>
-  <div class="date">Effective 8 October 2026 · previous version 1 October 2026</div>
+  <div class="date">Effective 15 October 2026 (revised: usage statistics and crash reports added, from app version 1.0.1 · previous version 8 October 2026 · earlier version 1 October 2026)</div>
   <p class="intro">An app where your drawing becomes real clothing. Because people of all ages use it, this page states plainly what we receive, what it is used for, and when it is deleted.</p>
 </header>
 
@@ -44,16 +44,18 @@
   <h2>At a glance</h2>
   <ul>
     <li>No account, no sign-in. We never ask for a name, age, contact details or location.</li>
-    <li>Your drawing is sent to our server only to create the clothing image. Otherwise we send only anonymous usage numbers that help us tune the game.</li>
+    <li>Your drawing is sent to our server only to create the clothing image. Otherwise our server receives only anonymous usage numbers that help us tune the game.</li>
+    <li>From app version 1.0.1, to improve stories and features we collect <strong>usage statistics with Google Firebase Analytics</strong> (in-app events such as screens viewed, story starts and finishes, clothing spell results, purchase and ad results, plus device information) and <strong>crash reports with Crashlytics</strong>.
+        They never include your name, contact details or drawings, are not linked to who you are, and are not used for ad tracking.</li>
     <li>Rewarded ads exist and <strong>open only when you tap them</strong>. They are personalised, and
         <strong>we ask once before the first ad is requested</strong>. Drawings and app activity are never
-        passed to any advertising company, and nothing is sold to anyone.</li>
+        passed on for advertising, and nothing is sold to anyone.</li>
     <li>Drawings and generated images are <strong>deleted automatically after 90 days.</strong></li>
   </ul>
 </div>
 
 <h2>1. What is sent to our server</h2>
-<p>Drawings are sent only when the clothing spell is cast. While you play, the app also sends the <strong>usage record</strong> (numbers only) and <strong>Luna activity</strong> listed below. No drawing, text or photo is ever part of these records.</p>
+<p>Drawings are sent only when the clothing spell is cast. While you play, the app also sends the <strong>usage record</strong> (numbers only) and <strong>Luna activity</strong> listed below. The last two rows (usage statistics and crash reports) go directly to Google Firebase, not to our server. No drawing, text or photo is ever part of any of these records.</p>
 <div class="tablewrap">
 <table>
   <tr><th>What</th><th>Why</th><th>How long</th></tr>
@@ -64,21 +66,26 @@
   <tr><td><strong>My code</strong> — a random string the app creates on the device</td><td>To know whose <strong>Luna</strong> (the in-app currency) and purchased decorations these are. It does not identify a person</td><td>While a balance or decoration exists; deleted on request</td></tr>
   <tr><td><strong>Luna activity</strong> — purchases, ads watched and where, what Luna was spent on, decorations bought</td><td>To count Luna correctly, prevent a reward being granted twice, and restore decorations on a new device</td><td>While a balance or decoration exists</td></tr>
   <tr><td><strong>Usage record</strong> — my code, date and time zone, whether today's free story was used, what was chosen at the "one more guest" prompt, time spent in the app</td><td>To check that the free amount and prices are fair and to improve the game. Never passed to advertisers</td><td>Kept; numbers only, not linked to any drawing or text. Deleted for your code on request</td></tr>
+  <tr><td><strong>Usage statistics</strong> (collected by Google Firebase Analytics, from version 1.0.1) — app instance ID, IDFV (a device identifier for apps from the same developer), in-app events (screens viewed, story and episode start and finish, drawing submitted (style type, number of garments, tools used), clothing spell result, like/dislike feedback, letters viewed, decorations applied, tutorial steps, lock and limit notices shown, Luna shop opened, purchase started, succeeded or failed with product ID, Luna spent or earned and where, ad request, load, show and reward results), device model, OS, app version and language, approximate country/region (inferred from IP address), session time</td><td>To improve stories and features, find where people stop playing, and measure ad and purchase performance. Not used for ad tracking</td><td>Google servers (section 3), kept for up to 14 months. No user ID is set, so it is not linked to your code or to any person</td></tr>
+  <tr><td><strong>Crash reports</strong> (collected by Firebase Crashlytics, from version 1.0.1) — crash reports, stack traces, device state at the time, Crashlytics installation ID</td><td>To fix crashes</td><td>Google servers (section 3), kept for 90 days (per Google)</td></tr>
 </table>
 </div>
-<p>We do <strong>not</strong> collect names, dates of birth, gender, contact details, addresses, location, contacts or photo library contents. A drawing carries no information about who drew it. We never receive advertising identifiers ourselves; the ad provider handles them when showing an ad (section 4).</p>
+<p>We do <strong>not</strong> collect names, dates of birth, gender, contact details, addresses, location, contacts or photo library contents. A drawing carries no information about who drew it. We never receive advertising identifiers ourselves; the ad provider handles them when showing an ad (section 4). We use the Firebase build that never reads the advertising identifier (IDFA).</p>
+<p>No name, contact details, drawing or any other image is sent to Firebase. The app does not collect location data. Your approximate country or region may be inferred from your IP address, but this is done by Google AdMob and Firebase for advertising and statistics.</p>
 
 <h2>2. What stays on the device</h2>
 <p>Drawings in progress, finished outfits, story progress and mixed colours are stored on the device only. Deleting the app removes them. We never receive them.</p>
 
 <h2>3. Processors we use</h2>
+<p>We use the following services to create clothing images, show ads and produce usage statistics.</p>
 <ul>
   <li><strong>Google Cloud</strong> — hosting and storage, in the Seoul (South Korea) region</li>
   <li><strong>BytePlus (Seedream)</strong> — generating the clothing image, via their Singapore region</li>
   <li><strong>OpenAI</strong> — generating the thank-you letter photo</li>
   <li><strong>Google AdMob</strong> — rewarded ads (section 4)</li>
+  <li><strong>Google Firebase</strong> (Google LLC, USA) — usage statistics (Analytics) and crash reports (Crashlytics). The usage statistics and crash report items in section 1 are sent over the network to Google servers in the USA and elsewhere while you use the app; Analytics data is kept for up to 14 months and Crashlytics data for 90 days. Contact: <a href="https://support.google.com/policies">support.google.com/policies</a></li>
 </ul>
-<p>We send only the drawing and a short English description, never anything identifying the sender. Both companies state that content sent through their paid APIs is not used to train their models, and we use the paid APIs only.</p>
+<p>To the companies that create the clothing image and letter photo we send only the drawing and a short English description, never anything identifying the sender. Both companies state that content sent through their paid APIs is not used to train their models, and we use the paid APIs only.</p>
 
 <h2>4. Advertising</h2>
 <p>Luna, the in-app currency, can be earned by watching an ad. Ads are served by <strong>Google AdMob</strong>.</p>
@@ -91,6 +98,7 @@
   <li>There is a daily limit on how many can be watched.</li>
   <li>AdMob handles device information to serve the ad and prevent fraud. <strong>We do not receive it</strong>,
       and we never pass drawings or app activity to any advertising company.</li>
+  <li>Firebase usage statistics are <strong>not used for ad tracking.</strong> Ad personalisation signals and ad network linking are turned off; ad result events are used only to measure ad performance for ourselves.</li>
 </ul>
 <p>See <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from partner sites and apps</a>.</p>
 <p>We do not ourselves track activity across other apps or websites, and we sell nothing.</p>
@@ -136,7 +144,7 @@ It has nothing to do with people who use the app.</p>
 <h2>10. Contact</h2>
 <p>📧 <a href="mailto:ricecookey.help@gmail.com">ricecookey.help@gmail.com</a></p>
 
-<footer>Atelier of Starlight · <a href="../../">Policies</a> · <a href="../support/">Support</a> · <a href="../">한국어</a></footer>
+<footer>Effective 15 October 2026 · Revised: usage statistics (Firebase Analytics) and crash reports (Crashlytics) added · Atelier of Starlight · <a href="../../">Policies</a> · <a href="../support/">Support</a> · <a href="../">한국어</a></footer>
 </div>
 </body>
 </html>
