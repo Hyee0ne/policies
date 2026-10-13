@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <script>
 // A/B 테스트: 처음 온 사람을 반반 나눠 기억한다. b면 웹툰(b/)으로. ?ab=a / ?ab=b 로 강제 가능
-var AB_ON = false;
+var AB_ON = true;
 (function () {
   var k = 'fml_ab', v = null, m = location.search.match(/[?&]ab=([ab])/);
   try { v = localStorage.getItem(k); } catch (e) {}
