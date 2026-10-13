@@ -9,13 +9,28 @@
 <meta property="og:description" content="폰 보면 혼나는 공부 타이머. 무료 · iPhone/iPad">
 <meta property="og:image" content="https://hyee0ne.github.io/policies/focusmylady/app/og.jpg">
 <meta property="og:type" content="website">
+<script>
+// A/B 테스트: 처음 온 사람을 반반 나눠 기억한다. b면 웹툰(b/)으로. ?ab=a / ?ab=b 로 강제 가능
+var AB_ON = false;
+(function () {
+  var k = 'fml_ab', v = null, m = location.search.match(/[?&]ab=([ab])/);
+  try { v = localStorage.getItem(k); } catch (e) {}
+  if (m) v = m[1];
+  if (v !== 'a' && v !== 'b') {
+    if (!AB_ON) v = 'a';  // 꺼져 있을 땐 기억하지 않는다 (켤 때 처음부터 반반으로)
+    else { v = Math.random() < 0.5 ? 'a' : 'b'; try { localStorage.setItem(k, v); } catch (e) {} }
+  } else if (m) { try { localStorage.setItem(k, v); } catch (e) {} }
+  window.FML_VARIANT = v;
+  if (v === 'b' && (AB_ON || m)) location.replace('b/' + location.search);
+})();
+</script>
 <!-- 방문·스토어 버튼 클릭 집계 (Google 애널리틱스, Firebase 프로젝트 focus-my-lady-rc의 웹 스트림) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVQ0V7W0VV"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-TVQ0V7W0VV', { allow_google_signals: false, allow_ad_personalization_signals: false });
+gtag('config', 'G-TVQ0V7W0VV', { allow_google_signals: false, allow_ad_personalization_signals: false, variant: window.FML_VARIANT || 'a' });
 </script>
 <style>
 :root{--bg:#07050f;--navy:#1b1733;--gold:#d9b45a;--gold-hi:#fbe7a1;--cream:#fdf6e3;--rose:#e2496b;--muted:#b9b0c9}
@@ -102,7 +117,7 @@ document.querySelectorAll('a.store').forEach(function (a) {
     var go = function () { location.href = a.href; };
     var done = false;
     var once = function () { if (!done) { done = true; go(); } };
-    gtag('event', 'store_click', { pos: a.dataset.pos, transport_type: 'beacon', event_callback: once });
+    gtag('event', 'store_click', { pos: a.dataset.pos, variant: 'a', transport_type: 'beacon', event_callback: once });
     setTimeout(once, 400);
   });
 });
