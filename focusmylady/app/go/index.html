@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>집중하세요, 아가씨</title>
+<!-- 인스타 게시물·스토리용 추적 링크: /go/?c=캠페인이름 → 기기에 맞는 스토어로 바로 보낸다.
+     App Store는 ct=insta_{c}, Google Play는 utm_campaign={c} 로 설치까지 나눠 셀 수 있다. 방문은 GA 이벤트 go_redirect -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TVQ0V7W0VV"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-TVQ0V7W0VV', { allow_google_signals: false, allow_ad_personalization_signals: false, send_page_view: false });
+(function () {
+  var m = location.search.match(/[?&]c=([\w-]{1,40})/);
+  var c = m ? m[1] : 'go';
+  var ua = navigator.userAgent;
+  var ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var android = /Android/i.test(ua);
+  var as = 'https://apps.apple.com/kr/app/apple-store/id6819981098?pt=129108053&ct=insta_' + c + '&mt=8';
+  var gp = 'https://play.google.com/store/apps/details?id=com.ricecookey.focusmylady&referrer=' +
+    encodeURIComponent('utm_source=instagram&utm_medium=social&utm_campaign=' + c);
+  window.FML_LINKS = { as: as, gp: gp };
+  if (!android && !ios) return;  // 컴퓨터: 아래에 두 버튼을 보여 준다
+  var to = android ? gp : as, done = false;
+  var go = function () { if (!done) { done = true; location.replace(to); } };
+  gtag('event', 'go_redirect', { campaign: c, store: android ? 'play' : 'appstore', transport_type: 'beacon', event_callback: go });
+  setTimeout(go, 500);
+})();
+</script>
+<style>
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:#07050f;color:#fdf6e3;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;text-align:center;padding:24px;box-sizing:border-box}
+h1{margin:0;color:#fbe7a1;font-size:26px}
+a img{height:52px;width:auto}
+.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+</style>
+</head>
+<body>
+<h1>집중하세요, 아가씨</h1>
+<p>스토어로 이동하는 중이에요…</p>
+<div class="row">
+  <a id="as" href="https://apps.apple.com/kr/app/apple-store/id6819981098?pt=129108053&amp;ct=insta_go&amp;mt=8"><img src="../badge.svg" alt="App Store에서 다운로드 하기"></a>
+  <a id="gp" href="https://play.google.com/store/apps/details?id=com.ricecookey.focusmylady"><img src="../badge_gp_ko.png" alt="Google Play에서 다운로드"></a>
+</div>
+<script>
+if (window.FML_LINKS) { document.getElementById('as').href = FML_LINKS.as; document.getElementById('gp').href = FML_LINKS.gp; }
+</script>
+</body>
+</html>
