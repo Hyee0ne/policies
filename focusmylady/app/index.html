@@ -46,6 +46,10 @@ a{color:inherit}
 .wrap{max-width:520px;margin:0 auto;padding:0 16px 120px}
 .hero{display:block;margin:0 -16px}
 .hero img{display:block;width:100%;height:auto}
+/* 첫 그림 아래를 바탕색으로 녹여 뚝 끊기지 않게, 제목은 그 위로 살짝 올린다 */
+.hero{position:relative}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(rgba(7,5,15,0),var(--bg));pointer-events:none}
+.hero+h1{position:relative;margin-top:-34px}
 h1{margin:18px 0 4px;text-align:center;font-size:32px;color:var(--gold-hi);letter-spacing:-.5px;line-height:1.25}
 .sub{text-align:center;margin:0 0 16px;font-size:18px}
 .cta{display:flex;justify-content:center;margin:8px 0 6px}
@@ -56,6 +60,11 @@ h1{margin:18px 0 4px;text-align:center;font-size:32px;color:var(--gold-hi);lette
 .free{text-align:center;color:var(--muted);font-size:14px;margin:0 0 28px}
 h2{font-size:20px;color:var(--gold-hi);margin:36px 0 12px;border-bottom:1px solid #3a3150;padding-bottom:6px}
 .shot{display:flex;gap:16px;align-items:center}
+/* 실제 화면: 스토어 스크린샷을 옆으로 넘겨 보기 */
+.shots{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.shots::-webkit-scrollbar{display:none}
+.shots img{flex:none;width:80%;max-width:400px;height:auto;border-radius:16px;border:2px solid var(--gold);scroll-snap-align:center}
+h2 .hint{float:right;font-size:13px;font-weight:600;color:var(--muted);margin-top:5px}
 .shot img{width:46%;border-radius:18px;border:3px solid var(--gold);flex:none}
 .shot p{margin:0;font-size:16px}
 .shot b{color:var(--rose)}
@@ -69,6 +78,7 @@ li{margin:6px 0}
 .tutor{text-align:center;font-size:14px}
 .tutor img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 12%;border-radius:50%;border:3px solid var(--gold)}
 .tutor b{display:block;color:var(--gold-hi);font-size:16px;margin-top:6px}
+.upd{display:inline-block;vertical-align:3px;background:var(--rose);color:#fff;font-weight:800;font-size:11px;line-height:1;padding:5px 8px;border-radius:999px;letter-spacing:.06em;margin-right:6px}
 .note{background:var(--navy);border:1px solid #3a3150;border-radius:12px;padding:14px 16px;font-size:15px}
 .coming{display:flex;align-items:center;gap:14px;margin-top:14px;padding:12px 14px;border:1px dashed var(--gold);border-radius:12px;background:var(--navy)}
 .coming img{width:84px;height:84px;border-radius:50%;border:3px solid var(--gold);flex:none}
@@ -85,33 +95,33 @@ footer small{display:block;margin-top:6px;font-size:11px;opacity:.8}
 </head>
 <body>
 <div class="wrap">
-  <a class="hero store" data-pos="hero" data-store="auto" href="https://apps.apple.com/kr/app/apple-store/id6819981098?pt=129108053&amp;ct=insta_kr&amp;mt=8"><img src="hero4.jpg" alt="훈장님·엘레노어·클라우드·세드릭 경이 아가씨를 꾸중하는 네 컷 그림"></a>
+  <a class="hero store" data-pos="hero" data-store="auto" href="https://apps.apple.com/kr/app/apple-store/id6819981098?pt=129108053&amp;ct=insta_kr&amp;mt=8"><img src="hero6.jpg" alt="노을 진 성을 배경으로 엘레노어 선생님이 아가씨를 가리키며 꾸중하고, 뒤에 클라우드와 세드릭 경이 선 그림"></a>
   <h1>집중하세요, 아가씨</h1>
   <p class="sub">공부 중에 폰을 보면<br>선생님이 <b>"아가씨!"</b> 하고 혼냅니다.</p>
   <div class="cta"><a class="store as" data-pos="top" href="https://apps.apple.com/kr/app/apple-store/id6819981098?pt=129108053&amp;ct=insta_kr&amp;mt=8"><img src="badge.svg" alt="App Store에서 다운로드 하기"></a><a class="store gp" data-pos="top" href="https://play.google.com/store/apps/details?id=com.ricecookey.focusmylady&amp;referrer=utm_source%3Dinstagram%26utm_medium%3Dlanding%26utm_campaign%3Dlanding_a"><img src="badge_gp_ko.png" alt="Google Play에서 다운로드"></a></div>
   <p class="free">무료 · iPhone · iPad · Android</p>
 
-  <h2>실제 화면</h2>
-  <div class="shot">
-    <img src="shot_scold.jpg" alt="앱에서 엘레노어 선생님이 아가씨! 하고 꾸중하는 화면">
-    <p>폰을 세워 두고 공부하다가<br>화면을 쳐다보는 순간<br><b>"아가씨!"</b><br><br>앞 카메라가 시선을 보고<br>선생님이 바로 알아챕니다.</p>
+  <h2>실제 화면 <small class="hint">옆으로 넘겨 보기 ›</small></h2>
+  <div class="shots">
+    <img src="shots/1.jpg" alt="10분 공부, 5분 휴식 — 쉬는 시간 화면">
+    <img src="shots/2.jpg" alt="교시마다 공부한 내용 기록 — 달력 화면">
+    <img src="shots/3.jpg" alt="공부할수록 오르는 아가씨의 칭호" loading="lazy">
+    <img src="shots/4.jpg" alt="호감도가 오르면 특별한 장면" loading="lazy">
+    <img src="shots/5.jpg" alt="폰을 보면 선생님이 지켜봅니다" loading="lazy">
+    <img src="shots/6.jpg" alt="눈이 마주치면 &quot;아가씨!&quot;" loading="lazy">
+    <img src="shots/7.jpg" alt="엄격함이 다른 네 명의 선생님" loading="lazy">
+    <img src="shots/8.jpg" alt="수업이 끝나면 성적표" loading="lazy">
+    <img src="shots/9.jpg" alt="날짜별 성적을 한눈에" loading="lazy">
   </div>
 
   <h2>이렇게 써요</h2>
   <ol>
-    <li>폰을 책상에 세워 두고 수업 시간을 고릅니다.</li>
+    <li>폰을 책상에 세워 두고 수업 시간과 교시 수를 고릅니다. (예: 10분씩 3교시)</li>
     <li>선생님은 책을 읽으며 조용히 지켜봐요.</li>
     <li>폰을 쳐다보거나 자리를 비우면 바로 꾸중이 날아옵니다.</li>
+    <li>교시 사이엔 쉬는 시간. 종이 울리면 다시 자리로 돌아와요.</li>
     <li>수업이 끝나면 성적표와 달력에 기록이 남아요.</li>
   </ol>
-
-  <h2>선생님 네 분</h2>
-  <div class="tutors four">
-    <div class="tutor"><img src="hunjang.jpg" alt="훈장님"><b>훈장님</b>1초만 봐도 불호령</div>
-    <div class="tutor"><img src="eleanor.jpg" alt="엘레노어 선생님"><b>엘레노어</b>엄격한 가정교사</div>
-    <div class="tutor"><img src="butler.jpg" alt="집사 클라우드"><b>클라우드</b>밤의 서재의 집사</div>
-    <div class="tutor"><span class="new">NEW</span><img src="knight.jpg" alt="호위 기사 세드릭 경"><b>세드릭 경</b>아가씨의 호위 기사</div>
-  </div>
 
   <h2>카메라는 안심하세요</h2>
   <p class="note">시선 인식은 폰 안에서만 처리됩니다. 카메라 영상이나 얼굴 사진은 저장되지도, 기기 밖으로 전송되지도 않아요.</p>
@@ -121,13 +131,17 @@ footer small{display:block;margin-top:6px;font-size:11px;opacity:.8}
 
   <footer><a href="https://hyee0ne.github.io/policies/focusmylady/">개인정보 처리방침</a> · <a href="https://hyee0ne.github.io/policies/focusmylady/support/">문의</a> · <a href="https://www.ricecookey.com/">RiceCookey</a><small>이 페이지는 방문 통계를 위해 Google 애널리틱스를 사용합니다.</small></footer>
 </div>
-<div class="bar"><a class="store as" data-pos="sticky" href="https://apps.apple.com/kr/app/apple-store/id6819981098?pt=129108053&amp;ct=insta_kr&amp;mt=8">App Store에서 무료로 받기<small>iPhone · iPad</small></a><a class="store gp" data-pos="sticky" href="https://play.google.com/store/apps/details?id=com.ricecookey.focusmylady&amp;referrer=utm_source%3Dinstagram%26utm_medium%3Dlanding%26utm_campaign%3Dlanding_a">Google Play에서 무료로 받기<small>Android</small></a></div>
+<div class="bar"><a class="store" data-pos="sticky" data-store="auto" href="https://apps.apple.com/kr/app/apple-store/id6819981098?pt=129108053&amp;ct=insta_kr&amp;mt=8"><span class="lbl">무료로 받기</span><small>iPhone · iPad · Android</small></a></div>
 <script>
 // 스토어로 가는 버튼·그림을 누르면 위치(pos)와 함께 기록하고 이동
 var STORES = { as: 'https://apps.apple.com/kr/app/apple-store/id6819981098?pt=129108053&ct=insta_kr&mt=8', gp: 'https://play.google.com/store/apps/details?id=com.ricecookey.focusmylady&referrer=utm_source%3Dinstagram%26utm_medium%3Dlanding%26utm_campaign%3Dlanding_a' };
+// 아래 떠 있는 버튼은 하나만: 기기에 맞는 스토어로 가고 글자도 맞춘다 (그 밖의 기기는 App Store)
+var OS = document.documentElement.dataset.os;
 document.querySelectorAll('a.store[data-store=auto]').forEach(function (a) {
-  a.href = document.documentElement.dataset.os === 'android' ? STORES.gp : STORES.as;
+  a.href = OS === 'android' ? STORES.gp : STORES.as;
 });
+var BAR = { android: ['Google Play에서 무료로 받기', 'Android'], ios: ['App Store에서 무료로 받기', 'iPhone · iPad'] }[OS];
+if (BAR) { var bl = document.querySelector('.bar .lbl'), bs = document.querySelector('.bar small'); bl.textContent = BAR[0]; bs.textContent = BAR[1]; }
 document.querySelectorAll('a.store').forEach(function (a) {
   a.addEventListener('click', function (e) {
     e.preventDefault();
